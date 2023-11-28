@@ -14,7 +14,7 @@ function pdo_get_connection(){
  * Thực thi câu lệnh sql thao tác dữ liệu (INhfhgfhgSERT, UPDATE, DELETE)
  * @param string $sql câu lệnh sql
  * @param array $args mảng giá trị cung cấp cho các tham số của $sql
- * @throws PDOException lỗi thực thi câu lệnh
+ * @throws PDOException lỗi thực thi câu lệnhVVV VVVV
  */
 function pdo_execute($sql){
     $sql_args = array_slice(func_get_args(), 1);
