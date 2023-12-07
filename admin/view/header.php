@@ -1,16 +1,16 @@
 <?php
-if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
-    extract($_SESSION['s_user']);
+if (isset($_SESSION['x_user']) && (count($_SESSION['x_user']) > 0)) {
+    extract($_SESSION['x_user']);
+    $fullName = $account_firstName . ' ' . $account_lastName;
     $html_account = '     
         <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown">
-        <img class="nav-profile-img mr-2" alt="" src="./view/images/faces/face3.jpg">
-        <span class="profile-name"> ' . $user_name . '</span>
+        <span class="profile-name">' . $fullName . '</span>
         </a> 
         <div class="dropdown-menu navbar-dropdown w-100" aria-labelledby="profileDropdown">
         <a class="dropdown-item" href="#">
             <i class="mdi mdi-cached mr-2 text-success"></i> Cập nhật </a>
-        <a class="dropdown-item" href="index.php?act=logout">
-            <i class="mdi mdi-logout mr-2 text-primary"></i> Đăng xuất </a>
+        <a class="dropdown-item" href="../public/index.php">
+            <i class="mdi mdi-logout mr-2 text-primary"></i> Về trang chủ </a>
     </div>     
        ';
 
@@ -25,13 +25,13 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Admin</title>
-    <link rel="stylesheet" href="./admin/view/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="./admin/view/vendors/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" href="./admin/view/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="./admin/view/vendors/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./admin/view/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="./admin/view/css/style.css">
-    <link rel="shortcut icon" href="view/view/img/favicon.png">
+    <link rel="stylesheet" href="view/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="view/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="view/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="view/vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="view/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="view/css/style.css?v=<?php echo time(); ?>">
+    <link rel="shortcut icon" href="view/img/favicon.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style type="text/css">
         /* Chart.js */
@@ -116,6 +116,12 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                         <span class="menu-title">Quản lý sản phẩm</span>
                     </a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.php?act=ql_dh">
+                    <i class="mdi fa-solid fa-arrow-up-wide-short menu-icon"></i>
+                        <span class="menu-title">Quản lý đơn hàng</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <div class="container-fluid page-body-wrapper">
@@ -123,7 +129,7 @@ if (isset($_SESSION['s_user']) && (count($_SESSION['s_user']) > 0)) {
                 <i class="settings-close mdi mdi-close"></i>
                 <p class="settings-heading">SIDEBAR SKINS</p>
                 <div class="sidebar-bg-options selected" id="sidebar-default-theme">
-                    <div class="img-ss rounded-circle bg-light border mr-3"></div> Default
+                    <div class="img-ss rounded-circle bg-light border mr-3"></div> Mặc Định
                 </div>
                 <div class="sidebar-bg-options" id="sidebar-dark-theme">
                     <div class="img-ss rounded-circle bg-dark border mr-3"></div> Dark

@@ -106,9 +106,7 @@ $in_tk = showtk($in_tk);
                                         <p class="m-0 survey-head">Today Earnings</p>
                                         <div class="d-flex justify-content-between align-items-end flot-bar-wrapper">
                                             <div>
-                                                <h3 class="m-0 survey-value">$5,300</h3>
-                                                <p class="text-success m-0">-310 avg. sales</p>
-                                            </div>
+                                                <h3 class="m-0 survey-value">$5,300</h3> 
                                             <div id="earningChart" class="flot-chart"></div>
                                         </div>
                                     </div>

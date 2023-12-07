@@ -1,7 +1,3 @@
-<?php 
-$in_tk = showtk($in_tk);
-
-?>
 <div class="main-panel">
     <div class="content-wrapper pb-0">
         <div class="page-header flex-wrap">
@@ -10,13 +6,13 @@ $in_tk = showtk($in_tk);
                     Quản lý tất cả tài khoản ADMIN - USER
                 </span>
             </h3>
-            <!-- <div class="d-flex">
+            <div class="d-flex">
                 <button type="button" class="btn btn-sm bg-white btn-icon-text border">
                     <i class="mdi mdi-email btn-icon-prepend"></i> Email </button>
                 <button type="button" class="btn btn-sm bg-white btn-icon-text border ml-3">
                     <i class="mdi mdi-printer btn-icon-prepend"></i> Print </button>
                 <button type="button" class="btn btn-sm ml-3 btn-success"> Add User </button>
-            </div> -->
+            </div>
         </div>
         <!-- <div class="row">
             <div class="col-xl-3 col-lg-12 stretch-card grid-margin">
@@ -185,7 +181,24 @@ $in_tk = showtk($in_tk);
                                 </thead>
                                 <tbody>
                                    
-                            <?=$in_tk?>
+                                <tr>
+        <td>
+            <div class="d-flex align-items-center">
+                <div class="table-user-name ml-3">
+                    <p class="mb-0 font-weight-medium" value="1">admin</p>
+                    <small value="1">'.$user_name.'</small>
+                </div>
+            </div>
+        </td>
+        <td value="1">admin</td>
+        <td>
+            <div class="badge badge-inverse-success" value="1">admin</div>
+        </td>
+        <td>
+            <a href="index.php?action=account_management&amp;id=1"><span class="mdi mdi-table-edit"></span></a> | 
+            <a href="index.php?action=delete_account&amp;id=1"><span class="mdi mdi-delete-forever"></span></a>
+        </td>
+    </tr>
                             
                             </tbody>
                             </table>

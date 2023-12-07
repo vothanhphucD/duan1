@@ -1,7 +1,3 @@
-<?php 
-$in_dssp_dm = showspdm($in_dm);
-
-?>
 <div class="main-panel">
     <div class="content-wrapper pb-0">
         <div class="page-header flex-wrap">
@@ -29,31 +25,49 @@ $in_dssp_dm = showspdm($in_dm);
                                 </tr>
                             </thead>
                             <tbody>
-                            <?=$in_dssp_dm?>
-                         </tbody>
+                                <tr>
+                                    <td class="py-1">
+                                        '.$i.'
+                                    </td>
+                                    <td> '.$loai_ten.'</td>
+                                    <td style="word-wrap: break-word;">
+                                        '.$loai_ten.'
+                                    </td>
+                                    <td>
+                                        '.$string.'
+                                    </td>
+                                    <td>'.$ngay_reg.'</td>
+                                    <td>
+                                        <a href="index.php?action=catalog_management&amp;id=5" class="mdi text-light">
+                                            <button class="btn btn-warning btn-rounded btn-sm"> Sửa </button>
+                                        </a>
+                                        <a href="index.php?action=delete_category&amp;id=5" class="mdi text-light">
+                                            <button class="btn btn-danger btn-rounded btn-sm"> Xóa </button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <!-- <div class="col-md-6 grid-margin stretch-card">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Quản lý danh mục</h4>
-                    <form class="form-group" action="index.php?action=option_category" method="POST"
-                        enctype="multipart/form-data">
-                        <label>Chọn chức năng</label>
-                        <select class="js-example-basic-single" style="width: 45%;" name="category_function">
-                            <option value="update_catalog">Cập nhật danh mục</option>
-                            <option value="add_category">Thêm danh mục</option>
-                        </select>
-                        <input type="submit" name="option_category" class="btn btn-primary mr-2"
-                            value="Thực hiện"></input>
-                    </form>
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Quản lý danh mục</h4>
+                        <form class="form-group" action="index.php?action=option_category" method="POST" enctype="multipart/form-data">
+                            <label>Chọn chức năng</label>
+                            <select class="js-example-basic-single" style="width: 45%;" name="category_function">
+                                <option value="update_catalog">Cập nhật danh mục</option>
+                                <option value="add_category">Thêm danh mục</option>
+                            </select>
+                            <input type="submit" name="option_category" class="btn btn-primary mr-2" value="Thực hiện"></input>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div> -->
             <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
@@ -73,16 +87,17 @@ $in_dssp_dm = showspdm($in_dm);
                     </div>
                 </div>
             </div>
-                    </div>
-    </div><footer class="footer">
-    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © ps32791
-            2023<br>
-            Distributed By <a href="https://www.facebook.com/thuy.thien.9003888" target="_blank">trinhphuongthuy</a>
-
-        </span>
-        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a href="https://ap.poly.edu.vn/" target="_blank">FPT Polytechnic</a> from
-                ap.poly.edu.vn</span>
+        </div>
     </div>
-</footer>
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © ps32791
+                2023<br>
+                Distributed By <a href="https://www.facebook.com/thuy.thien.9003888" target="_blank">trinhphuongthuy</a>
+
+            </span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a href="https://ap.poly.edu.vn/" target="_blank">FPT Polytechnic</a> from
+                ap.poly.edu.vn</span>
+        </div>
+    </footer>
 </div>

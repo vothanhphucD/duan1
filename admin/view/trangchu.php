@@ -8,9 +8,9 @@
             <div class="main-panel">
     <div class="content-wrapper pb-0">
         <div class="page-header flex-wrap">
-            <h3 class="mb-0"> Hi, welcome back! <span class="pl-0 h6 pl-sm-2 text-muted d-inline-block">Your web
-                    analytics dashboard template.</span>
-            </h3>
+        <h3 class="mb-0"> Xin chào, chào mừng bạn quay trở lại! <span class="pl-0 h6 pl-sm-2 text-muted d-inline-block">Trang web của bạn
+                     mẫu trang tổng quan phân tích.</span>
+             </h3>
             <div class="d-flex">
                 <button type="button" class="btn btn-sm bg-white btn-icon-text border">
                     <i class="mdi mdi-email btn-icon-prepend"></i> Email </button>
@@ -27,13 +27,13 @@
                             <div class="card-body px-3 py-4">
                                 <div class="d-flex justify-content-between align-items-start">
                                     <div class="color-card">
-                                        <p class="mb-0 color-card-head">Sales</p>
+                                        <p class="mb-0 color-card-head">Giảm giá</p>
                                         <h2 class="text-white"> $8,753.<span class="h5">00</span>
                                         </h2>
                                     </div>
                                     <i class="card-icon-indicator mdi mdi-basket bg-inverse-icon-warning"></i>
                                 </div>
-                                <h6 class="text-white">18.33% Since last month</h6>
+                                <h6 class="text-white">18.33% Since  1 tuần Trước</h6>
                             </div>
                         </div>
                     </div>
@@ -42,13 +42,13 @@
                             <div class="card-body px-3 py-4">
                                 <div class="d-flex justify-content-between align-items-start">
                                     <div class="color-card">
-                                        <p class="mb-0 color-card-head">Margin</p>
+                                        <p class="mb-0 color-card-head">Doanh Thu</p>
                                         <h2 class="text-white"> $5,300.<span class="h5">00</span>
                                         </h2>
                                     </div>
                                     <i class="card-icon-indicator mdi mdi-cube-outline bg-inverse-icon-danger"></i>
                                 </div>
-                                <h6 class="text-white">13.21% Since last month</h6>
+                                <h6 class="text-white">13.21% Since  1 tuần Trước</h6>
                             </div>
                         </div>
                     </div>
@@ -57,13 +57,13 @@
                             <div class="card-body px-3 py-4">
                                 <div class="d-flex justify-content-between align-items-start">
                                     <div class="color-card">
-                                        <p class="mb-0 color-card-head">Orders</p>
+                                        <p class="mb-0 color-card-head">Đặt hàng</p>
                                         <h2 class="text-white"> $1,753.<span class="h5">00</span>
                                         </h2>
                                     </div>
                                     <i class="card-icon-indicator mdi mdi-briefcase-outline bg-inverse-icon-primary"></i>
                                 </div>
-                                <h6 class="text-white">67.98% Since last month</h6>
+                                <h6 class="text-white">67.98% Since  1 tuần Trước</h6>
                             </div>
                         </div>
                     </div>
@@ -72,12 +72,12 @@
                             <div class="card-body px-3 py-4">
                                 <div class="d-flex justify-content-between align-items-start">
                                     <div class="color-card">
-                                        <p class="mb-0 color-card-head">Affiliate</p>
+                                        <p class="mb-0 color-card-head">liên kết</p>
                                         <h2 class="text-white">2368</h2>
                                     </div>
                                     <i class="card-icon-indicator mdi mdi-account-circle bg-inverse-icon-success"></i>
                                 </div>
-                                <h6 class="text-white">20.32% Since last month</h6>
+                                <h6 class="text-white">20.32% Since  1 tuần Trước</h6>
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
                             <div class="col-sm-4">
                                 <div class="card mb-3 mb-sm-0">
                                     <div class="card-body py-3 px-4">
-                                        <p class="m-0 survey-head">Product Sold</p>
+                                        <p class="m-0 survey-head">Sản phẩm đã bán</p>
                                         <div class="d-flex justify-content-between align-items-end flot-bar-wrapper">
                                             <div>
                                                 <h3 class="m-0 survey-value">$9,100</h3>
@@ -129,7 +129,7 @@
                             <div class="col-sm-4">
                                 <div class="card">
                                     <div class="card-body py-3 px-4">
-                                        <p class="m-0 survey-head">Today Orders</p>
+                                        <p class="m-0 survey-head">Đơn đặt hàng hôm nay</p>
                                         <div class="d-flex justify-content-between align-items-end flot-bar-wrapper">
                                             <div>
                                                 <h3 class="m-0 survey-value">$4,354</h3>
@@ -152,32 +152,21 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-8">
-                                <p class="text-muted mb-0"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do eiusmod tempor incididunt ut labore et dolore. <b>Learn More</b>
-                                </p>
+                            <p class="text-muted mb-0"> Điều quan trọng là phải tự mình chăm sóc bệnh nhân, nhưng sau đó anh ta sẽ được tham gia một chương trình huấn luyện
+                                     trong thời gian đó chúng xảy ra như khi chuyển dạ và đau đớn. <b>Tìm hiểu thêm</b>
+                                 </p>
                             </div>
                             <div class="col-sm-4">
-                                <p class="mb-0 text-muted">Sales Revenue</p>
+                            <p class="mb-0 text-muted">Doanh thu bán hàng</p>
                                 <h5 class="d-inline-block survey-value mb-0"> $2,45,500 </h5>
-                                <p class="d-inline-block text-danger mb-0"> last 8 months </p>
+                                <p class="d-inline-block text-danger mb-0">  1 tuần Trước </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-    </div><footer class="footer">
-    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © ps32791
-            2023<br>
-            Distributed By <a href="https://www.facebook.com/thuy.thien.9003888" target="_blank">trinhphuongthuy</a>
-
-        </span>
-        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a href="https://ap.poly.edu.vn/" target="_blank">FPT Polytechnic</a> from
-                ap.poly.edu.vn</span>
     </div>
-</footer>
 </div>
 <!-- main-panel ends -->
 </div>
@@ -185,27 +174,3 @@
 </div>
 <!-- container-scroller -->
 <!-- plugins:js -->
-<script src="view/vendors/js/vendor.bundle.base.js"></script>
-<!-- endinject -->
-<!-- Plugin js for this page -->
-<script src="view/vendors/chart.js/Chart.min.js"></script>
-<script src="view/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-<script src="view/vendors/flot/jquery.flot.js"></script>
-<script src="view/vendors/flot/jquery.flot.resize.js"></script>
-<script src="view/vendors/flot/jquery.flot.categories.js"></script>
-<script src="view/vendors/flot/jquery.flot.fillbetween.js"></script>
-<script src="view/vendors/flot/jquery.flot.stack.js"></script>
-<script src="view/vendors/flot/jquery.flot.pie.js"></script>
-<!-- End plugin js for this page -->
-<!-- inject:js -->
-<script src="view/js/off-canvas.js"></script>
-<script src="view/js/hoverable-collapse.js"></script>
-<script src="view/js/misc.js"></script>
-<!-- endinject -->
-<!-- Custom js for this page -->
-<script src="view/js/dashboard.js"></script>
-<!-- End custom js for this page -->
-
-
-
-</body></html>
