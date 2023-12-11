@@ -14,7 +14,7 @@
             return $conn;
         }
     
-        //Them Sua Xoa
+        //Them Sua Xoa san pham
         function conn_execute($sql) {
             $conn = $this->conn_db();
             $sqlBindParam = array_slice(func_get_args(), 1);
