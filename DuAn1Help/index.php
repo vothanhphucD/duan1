@@ -1,6 +1,6 @@
 <?php
     session_start();
     ob_start();
-/* khanâg */
+/* khanâgââ */
     header('location: public/index.php');
 ?>
