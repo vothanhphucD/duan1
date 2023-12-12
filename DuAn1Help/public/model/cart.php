@@ -16,6 +16,15 @@
             return $this->conn_execute($sql, $qty, $id, $_SESSION['x_user']['account_id']);
         }
 
+        public function upQTYonCart($qty, $id) {
+            $sql = "UPDATE cart SET cart_qty = ? WHERE cart_id = ? AND account_id = ?";
+            return $this->conn_execute($sql, $qty, $id, $_SESSION['x_user']['account_id']);
+        }
+
+        public function delCart($a) {
+            $sql = "DELETE FROM cart WHERE cart_id = ?";
+            return $this->conn_execute($sql, $a);
+        }
 
         public function checkDiscount($a) {
             $sql = "SELECT * FROM discount_code WHERE code_gift = ? AND code_qty > 0";
