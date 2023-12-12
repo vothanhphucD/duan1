@@ -84,31 +84,7 @@ $show_next = "?op=shop&page=$next&start=$startNext";
                         <div id="grid-view" class="tab-pane fade active show" role="tabpanel">
                             <div class="product-area shop-product-area">
                                 <div class="row">
-                                    <?php
-                                        $i = 0;
-                                        foreach ($show_new as $items) {
-                                            if ($i == 12) {
-                                                break;
-                                            }
-                                            $i++;
-                                            extract($items);
-                                            if ($product_del == 0.00) {
-                                                $giamgia = 0;
-                                            } else {
-                                                $giamgia = (($product_price - $product_del) / $product_price) * 100;
-                                            }
-                                            $dateNow = date("Y-m-d");
-                                            $giamgia = intval($giamgia);
-                                            $image = explode(',', $image_files);
-                                            echo '
-                                                                <div class="col-lg-4 col-md-4 col-sm-6 mt-40">
-                                                                    <!-- single-product-wrap start -->
-                                                                    <div class="single-product-wrap">
-                                                                        <div class="product-image">
-                                                                            <a href="?op=detail_pro&product_id='. $product_id .'&category_id='. $category_id .'">
-                                                                                <img src="' . $image[0] . '" alt="Li"s Product Image">
-                                                                            </a>
-                                                                            ';
+                                    
                                             if ($dateNow == $time_reg) {
                                                 echo '<span class="sticker">New</span>';
                                             }
