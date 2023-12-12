@@ -1,11 +1,5 @@
 <?php
-    if(session_status() == PHP_SESSION_NONE) { //Kiểm tra session đã được mở chưa, nếu chưa thì khởi tạo session để sử dụng session
-        session_start();
-    }
-    if (file_exists('../model/cart.php')) {
-        require "../model/cart.php";
-    }
-    extract($_REQUEST);
+ 
 
     if(isset($addToCartDetail)) {
         $cart = new cart_lass();
