@@ -159,10 +159,7 @@
                         <!-- Begin Header Middle Right Area -->
                         <div class="col-lg-9 pl-0 ml-sm-15 ml-xs-15">
                             <!-- Begin Header Middle Searchbox Area -->
-                            <form action="?op=search" method="post" class="hm-searchbox">
-                                <input type="text" name="valueKey" placeholder="Nhập Sản Phẩm Bạn Tìm Kiếm ...">
-                                <button class="li-btn" name="btnSearch" type="submit"><i class="fa fa-search"></i></button>
-                            </form>
+                           
                             <!-- Header Middle Searchbox Area End Here -->
                             <!-- Begin Header Middle Right Area -->
                             <?php
