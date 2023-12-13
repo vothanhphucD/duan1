@@ -1,29 +1,5 @@
 <?php
-$start = $start + 1;
-$end = $start * 12;
-$tongProduct = 0;
-foreach ($show_xuly as $items) {
-    $tongProduct++;
-}
-$xlTinhToan = $tongProduct / 12;
-$offset = ceil($xlTinhToan);
-if ($page <= 1) {
-    $back = $page;
-    $startBack = $start - 1;
-} else {
-    $back = $page - 1;
-    $startBack = $start - 13;
-}
-if ($page == $offset) {
-    $next = $page;
-    $startNext = $start - 1;
-} else {
-    $next = $page + 1;
-    $startNext = $start + 11;
-}
-$show_back = "?op=shop&page=$back&start=$startBack";
-$show_next = "?op=shop&page=$next&start=$startNext";
-?>
+
 <div class="breadcrumb-area">
     <div class="container">
         <div class="breadcrumb-content">
