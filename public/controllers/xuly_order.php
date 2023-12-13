@@ -13,7 +13,9 @@
     if(isset($payOrder)) {
         $order = new order_lass();
         $cart = new cart_lass();
-
+        if($check == 1) {
+            $order->updateInfo($address, $phone); 
+        }
         $resultsCart = $cart->show_cart();
         $order->add_order($total, $phuongthuc, $note);
         foreach($resultsCart as $items) {

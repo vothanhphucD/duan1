@@ -354,9 +354,12 @@
                                             <option value="Tiền mặt">Tiền mặt</option>
                                             <option value="Chuyển khoản">Chuyển khoản</option>
                                         </select>
+                                        <img id="qrCode" src="" width="150px" alt="">
                                     </div>
                                     <input type="hidden" id="note-up" name="note" value="<?=$total?>">
                                     <input type="hidden" id="address-form" name="address" value="<?=$total?>">
+                                    <input type="hidden" id="check-form" name="check" value="0">
+                                    <input type="hidden" id="phone-form" name="phone" value="<?=$total?>">
                                     <input type="hidden" id="total-up" name="total" value="<?=$total?>">
                                     <input type="hidden" id="subTotal-up" name="subTotal" value="<?=$subTotal?>">
                                     <input type="hidden" id="discount" name="magiamgia" value="<?=$magiamgia?>">
@@ -372,6 +375,31 @@
 </div>
 
 <script>
+    $(document).ready(function() {
+        $("#payOrder").on('click', function(e) {
+            var valAddress = $("#address").val();
+            var valPhone = $("#yourphone").val();
+            if(valAddress === '' && valPhone === '') {
+                e.preventDefault();
+                alert('Vui lòng điền đủ địa chỉ và số điện thoại nhận hàng!')
+            } else {
+                $("#address-form").val(valAddress);
+                $("#phone-form").val(valPhone);
+                $("#check-form").val(1);
+            }
+        });
+    });
+
+    $("#phuongthuc").on('change', function() {
+        var val = $(this).val();
+        if(val == "Chuyển khoản") {
+            $("#qrCode").css('display', 'block');
+            $("#qrCode").attr("src", "view/images/payment/qr.png");
+        } else {
+            $("#qrCode").css('display', 'none');
+        }
+    });
+
     $("#checkout-mess").change(function() {
         var value = $(this).val();
         $("#note-up").val(value);

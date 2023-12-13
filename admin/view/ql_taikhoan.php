@@ -11,7 +11,6 @@
                     <i class="mdi mdi-email btn-icon-prepend"></i> Email </button>
                 <button type="button" class="btn btn-sm bg-white btn-icon-text border ml-3">
                     <i class="mdi mdi-printer btn-icon-prepend"></i> Print </button>
-                <button type="button" class="btn btn-sm ml-3 btn-success"> Add User </button>
             </div>
         </div>
         <!-- <div class="row">
@@ -173,33 +172,34 @@
                             <table class="table">
                                 <thead class="bg-light">
                                     <tr>
-                                        <th>Tên đăng nhập</th>
-                                        <th>Mật khẩu</th>
+                                        <th>Họ và tên</th>
+                                        <th>Email</th>
                                         <th>Quyền truy cập</th>
                                         <th>Cập nhật</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                   
-                                <tr>
-        <td>
-            <div class="d-flex align-items-center">
-                <div class="table-user-name ml-3">
-                    <p class="mb-0 font-weight-medium" value="1">admin</p>
-                    <small value="1">'.$user_name.'</small>
-                </div>
-            </div>
-        </td>
-        <td value="1">admin</td>
-        <td>
-            <div class="badge badge-inverse-success" value="1">admin</div>
-        </td>
-        <td>
-            <a href="index.php?action=account_management&amp;id=1"><span class="mdi mdi-table-edit"></span></a> | 
-            <a href="index.php?action=delete_account&amp;id=1"><span class="mdi mdi-delete-forever"></span></a>
-        </td>
-    </tr>
-                            
+                                    <?php
+                                        foreach($show as $mod) {
+                                            extract($mod);
+                                            $fullName = $account_firstName . ' ' . $account_lastName;
+                                            echo '
+                                                <tr>
+                                                    <td>
+                                                        <p class="mb-0 font-weight-medium" value="1">'.$fullName.'</p>
+                                                    </td>
+                                                    <td value="1">'.$account_email.'</td>
+                                                    <td>
+                                                        <div class="badge badge-inverse-success" value="1">'.$account_position.'</div>
+                                                    </td>
+                                                    <td>
+                                                        <a href="index.php?action=account_management&amp;id=1"><span class="mdi mdi-table-edit"></span></a> | 
+                                                        <a href="index.php?action=delete_account&amp;id=1"><span class="mdi mdi-delete-forever"></span></a>
+                                                    </td>
+                                                </tr>
+                                            ';
+                                        }
+                                    ?>
                             </tbody>
                             </table>
                         </div>
@@ -215,7 +215,7 @@
     <div class="d-sm-flex justify-content-center justify-content-sm-between">
         <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © ps32791
             2023<br>
-            Distributed By <a href="https://www.facebook.com/thuy.thien.9003888" target="_blank">trinhphuongthuy</a>
+            Distributed By <a href="https://www.facebook.com/thuy.thien.9003888" target="_blank">DreamMakers</a>
 
         </span>
         <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a href="https://ap.poly.edu.vn/" target="_blank">FPT Polytechnic</a> from

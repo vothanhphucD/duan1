@@ -172,9 +172,9 @@
                                     <h6><a>'. $cart_name .'</a></h6>
                                     <span>$'. $cart_price .' x '. $cart_qty .'</span>
                                 </div>
-                                <button class="close" title="Remove">
+                                <a href="controllers/xuly_cart.php?valueID='. $cart_id .'&check=qtybang0AutoDel&checkHref=home" class="close" title="Remove">
                                     <i class="fa fa-close"></i>
-                                </button>
+                                </a>
                             </li>
                         </ul>
                     ';

@@ -13,45 +13,60 @@
                     <h4 class="card-title">Tất cả sản phẩm</h4>
                     <p></p>
                     <div class="table-responsive">
-                        <table class="table table-striped" style="table-layout: fixed; width: 100%; text-align:center;">
+                        <table class="table table-striped" style="text-align:center;">
                             <thead>
                                 <tr>
-                                    <th style="width: 2%;">#</ th>
+                                    <th style="width: 2%;">#</th>
                                     <th style="width: 28%;">Tên sản phẩm</th>
                                     <th style="width: 10%;">Giá</th>
                                     <th style="width: 18%;">danh mục</th>
                                     <th style="width: 15%;">Hình sản phẩm</th>
-                                    <!-- <th style="width: 13%;">Ngày cập nhật</th> -->
-                                    <th style="width: 8%;">Giảm Giá</th>
+                                    <th style="width: 15%;">Số lượng</th>
+                                    <th style="width: 13%;">Ngày cập nhật</th>
 
                                     <th style="width: 12%;">Xóa sản phẩm</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <!-- <tr>
-                                        <td class="py-1">
-                                        1
-                                        </td>
-                                        <td>Only Check Trouser</td>
-                                        <td style="word-wrap: break-word;">
-                                        999999
-                                        </td>
-                                        <td>
-                                            <img src="../uploads/product-03.jpg" alt="" style="width:100%;">
-                                        </td>
-                                        <td>May 15, 2015</td>
-                                        <td>
-                                            <a href="index.php?action=product_management&amp;id=58" class="mdi text-light">
-                                                <button class="btn btn-warning btn-rounded btn-sm"> Sửa </button>
-                                            </a>
-                                            <a href="index.php?action=delete_product&amp;id=58" class="mdi text-light">
-                                                <button class="btn btn-danger btn-rounded btn-sm"> Xóa </button>
-                                            </a>
-                                        </td>
-                                    </tr>                      
+                            <tbody >
+                                <?php
+                                    $i = 0;
+                                    foreach($show as $mod) {
+                                        $i++;
+                                        extract($mod);
+                                        $image = explode(',', $image_files);
+                                        $name = mb_substr($product_name, 0, 5, 'UTF-8') . '...';
+                                        echo '
+                                            <tr>
+                                                <td class="py-1">
+                                                '. $i .'
+                                                </td>
+                                                <td>'. $name .'</td>
+                                                <td style="word-wrap: break-word;">
+                                                $'. $product_price .'
+                                                </td>
+                                                <td style="word-wrap: break-word;">
+                                                '. $category_name .'
+                                                </td>
+                                                <td>
+                                                    <img style="height:70px; width:100px;" src="../public/'. $image[0] .'" alt="" style="width:100%;">
+                                                </td>
+                                                <td>'. $product_qty .'</td>
+                                                <td>'. $time_reg .'</td>
+                                                <td>
+                                                    <a href="index.php?act=update_Product&id='. $product_id .'&cate_id='. $category_id .'&pro_price='. $product_price .'&pro_del='. $product_del .'&pro_name='. $product_name .'&pro_qty='. $product_qty .'&pro_des='. $product_des .'" class="mdi text-light">
+                                                        <button class="btn btn-warning btn-rounded btn-sm"> Sửa </button>
+                                                    </a>
+                                                    <a href="controllers/xuly_product.php?action=delete_product&id='. $product_id .'" class="mdi text-light">
+                                                        <button class="btn btn-danger btn-rounded btn-sm"> Xóa </button>
+                                                    </a>
+                                                </td>
+                                            </tr>    
+                                        ';
+                                    }
+                                ?>                  
                                 
-                                 -->
-                                <tr style="height:100px;">
+                                
+                                <!-- <tr style="height:100px;">
                                     <td class="py-1">
                                         '.$i.'
                                     </td>
@@ -74,7 +89,7 @@
                                             <button class="btn btn-danger btn-rounded btn-sm"> Xóa </button>
                                         </a>
                                     </td>
-                                </tr>
+                                </tr> -->
 
 
                             </tbody>
@@ -107,49 +122,43 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Thêm sản phẩm</h4>
-                        <form class="forms-sample" action="index.php?act=add_product" method="POST" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <label for="exampleInputName1">Mã Sản Phẩm</label>
-                                <input type="text" class="form-control" id="exampleInputName1" name="sanpham_id" placeholder="Tên sản phẩm">
-                            </div>
+                        <form class="forms-sample" action="controllers/xuly_product.php" method="POST" enctype="multipart/form-data">   
                             <div class="form-group">
                                 <label for="exampleInputName1">Tên sản phẩm</label>
-                                <input type="text" class="form-control" id="exampleInputName1" name="sanpham_ten" placeholder="Tên sản phẩm">
+                                <input type="text" class="form-control" id="exampleInputName1" name="product_name" placeholder="Tên sản phẩm">
                             </div>
                             <div class="form-group">
                                 <label for="exampleTextarea1">Chọn danh mục</label>
                                 <select class="form-control" name="loai_id">
-                                    <option value="3">
-                                        Điện Thoại </option>
-                                    <option value="5">
-                                        LapTop </option>
-                                    <option value="8">
-                                        Phụ Kiện </option>
-                                    <option value="9">
-                                        Phụ kiện Laptop </option>
-                                    <option value="10">
-                                        Phụ Kiện Điện Thoại </option>
+                                    <?php 
+                                        foreach($showCate as $mod) {
+                                            extract($mod);
+                                            echo '
+                                                <option value="'. $category_id .'">'. $category_name .'</option>
+                                            ';
+                                        }
+                                    ?>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="exampleTextarea1">Giá</label>
-                                <input type="text" class="form-control" id="exampleInputName1" name="sanpham_gia" placeholder="Giá">
+                                <label for="exampleTextarea1">Giá gốc</label>
+                                <input type="number" class="form-control" id="exampleInputName1" name="product_price" placeholder="Giá">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleTextarea1">Giá giảm</label>
+                                <input type="number" class="form-control" id="exampleInputName1" name="product_del" placeholder="Có thể bỏ qua">
                             </div>
                             <div class="form-group">
                                 <label for="exampleTextarea1">Số Lượng</label>
                                 <input type="text" class="form-control" id="exampleInputName1" name="sanpham_soluong" placeholder="Số Lượng">
                             </div>
                             <div class="form-group">
-                                <label for="exampleTextarea1">Sale</label> <br>
-                                <input type="text" class="form-control" id="exampleInputName1" name="Sale">
+                                <label for="exampleTextarea1">Mô Tả</label> <br>
+                                <textarea style="border: 1px soild pink;" name="product_des" id="sanpham_mota" cols="45" rows="5" placeholder="Nhập Mô Tả sản Phẩm..."></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="exampleTextarea1">Upload hình</label>
-                                <input type="file" class="form-control" id="exampleInputName1" name="sanpham_img" placeholder="Giảm Giá">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleTextarea1">Mô Tả</label> <br>
-                                <textarea style="border: 1px soild pink;" name="sanpham_mota" id="sanpham_mota" cols="60" rows="5"></textarea>
+                                <input type="file" class="form-control" id="exampleInputName1" name="images[]" multiple>
                             </div>
 
                             <input type="submit" class="btn btn-primary mr-2" name="add_product" value=" Thêm Sản Phẩm ">
@@ -214,7 +223,7 @@
         <div class="d-sm-flex justify-content-center justify-content-sm-between">
             <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © ps32791
                 2023<br>
-                Distributed By <a href="https://www.facebook.com/thuy.thien.9003888" target="_blank">trinhphuongthuy</a>
+                Distributed By <a href="#" target="_blank"></a>
 
             </span>
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a href="https://ap.poly.edu.vn/" target="_blank">FPT Polytechnic</a> from

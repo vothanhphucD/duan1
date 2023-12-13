@@ -5,20 +5,32 @@ ob_start();
 
 // include ("./../Model/database.php");
 include("view/header.php");
-
 if (isset($_GET['act'])) {
     switch ($_GET['act']) {
         case 'ql_sp':
+            include_once("model/product.php");
+            $pro = new pro();
+            $show = $pro->show_pro();
+            $showCate = $pro->showCate();
             include("view/ql_sanpham.php");
             break;
         case 'ql_dm':
+            include_once("model/category.php");
+            $cate = new cate();
+            $show = $cate->showCate();
             include("view/ql_danhmuc.php");
             break;
         case 'ql_tk':
+            include_once("model/account.php");
+            $acc = new account();
+            $show = $acc->show_account();
             include("view/ql_taikhoan.php");
             break;
-        case 'updateOrder':
-            include("view/update_order.php");
+        case 'update_Product':
+            include_once("model/product.php");
+            $pro = new pro();
+            $showCate = $pro->showCate();
+            include("view/update_Product.php");
             break;
         case 'ql_dh':
             include 'model/order.php';

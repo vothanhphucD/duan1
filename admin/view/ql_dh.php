@@ -13,7 +13,7 @@
                     <h4 class="card-title">Tất cả danh mục</h4>
                     <p></p>
                     <div class="table-responsive">
-                        <table class="table table-striped" style="table-layout: fixed; width: 100%; text-align:center;">
+                        <table class="table table-striped" style=" text-align:center;">
                             <thead>
                                 <tr>
                                     <th style="width: 20%;">ID đơn hàng</th>
@@ -23,7 +23,7 @@
                                     <th style="width: 25%;">Trạng thái</th>
                                     <th style="width: 25%;">Người đặt</th>
                                     <th style="width: 30%;">Ngày dặt</th>
-                                    <th style="width: 20%;">Chức năng</th>
+                                    <th style="width: 20%;">Chức năng</th> 
                                 </tr>
                             </thead>
                             <tbody>
@@ -50,9 +50,6 @@
                                             <td>'. $fullName .'</td>
                                             <td>'. $time_reg .'</td>
                                             <td>
-                                                <a class="text-light upOrderNow">
-                                                    <button class="btn btn-warning btn-rounded btn-sm"> Cập nhật </button>
-                                                </a>
                                                 ';
                                                     if($order_status == 'Đang chờ duyệt') {
                                                         echo '
@@ -61,6 +58,25 @@
                                                                 <button class="btn btn-danger btn-rounded btn-sm"> Duyệt </button>
                                                             </a>
                                                         ';
+                                                    } else if($order_status == 'Đã hủy') {
+                                                        echo '
+                                                            <br>
+                                                            <a class="mdi text-light">
+                                                                <button style="background-color: red;" class="btn btn-danger btn-rounded btn-sm"> Đã hủy </button>
+                                                            </a>
+                                                        ';
+                                                    } else if($order_status == 'Giao thành công') {
+                                                        echo '
+                                                            <br>
+                                                            <a class="mdi text-light">
+                                                                <button style="background-color: green;" class="btn btn-danger btn-rounded btn-sm"> Hoàn thành </button>
+                                                            </a>
+                                                        ';
+                                                    } else {
+                                                        echo '
+                                                        <a class="text-light upOrderNow">
+                                                            <button class="btn btn-warning btn-rounded btn-sm"> Cập nhật </button>
+                                                        </a>';
                                                     }
                                                 echo '
                                             </td>
@@ -100,7 +116,7 @@
         <div class="d-sm-flex justify-content-center justify-content-sm-between">
             <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © ps32791
                 2023<br>
-                Distributed By <a href="https://www.facebook.com/nguyentany.2105" target="_blank">NguyenTanY</a>
+                Distributed By <a href="#" target="_blank"></a>
 
             </span>
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a href="https://ap.poly.edu.vn/" target="_blank">FPT Polytechnic</a> from
