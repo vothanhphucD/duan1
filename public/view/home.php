@@ -104,10 +104,10 @@
                                             }
                                             $dateNow = date("Y-m-d");
                                             $giamgia = intval($giamgia);
-                                            $image = explode(',', $image_files);
+                                            $image = explode(',', $image_files);   
                                             echo '
                                                 <div class="col-lg-12">
-                                                    <!-- single-product-wrap start -->
+                                                    <!-- single-product-wrap start -->  
                                                     <div class="single-product-wrap">
                                                         <div class="product-image">
                                                             <a href="?op=detail_pro&product_id='. $product_id .'&category_id='. $category_id .'">

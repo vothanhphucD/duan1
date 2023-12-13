@@ -25,43 +25,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php  
-                                    $i = 0;
-                                    foreach($show as $mod) {
-                                        extract($mod);
-                                        $i++;
-                                        echo '
-                                            <tr>
-                                                <td class="py-1">
-                                                    '.$i.'
-                                                </td>
-                                                <td> '.$category_name.'</td>
-                                                <td>
-                                                    '.$TongSanPham.'
-                                                </td>
-                                                <td>'.$category_status.'</td>
-                                                <td>'.$time_reg.'</td>
-                                                <td>
-                                                    ';
-                                                        if($category_status == 'Đang hoạt động') {
-                                                            echo '
-                                                                <a href="controllers/xuly_cate.php?check=downCate&id='.$category_id.'" class="mdi text-light">
-                                                                    <button class="btn btn-warning btn-rounded btn-sm"> Dừng hoạt động </button>
-                                                                </a>
-                                                            ';
-                                                        } else {
-                                                            echo '
-                                                                <a href="controllers/xuly_cate.php?check=upCate&id='.$category_id.'" class="mdi text-light">
-                                                                    <button class="btn btn-warning btn-rounded btn-sm"> Tiếp tục hoạt động </button>
-                                                                </a>
-                                                            ';
-                                                        }
-                                                    echo '
-                                                </td>
-                                            </tr>
-                                        ';
-                                    }
-                                ?>
+                            
                             </tbody>
                         </table>
                     </div>

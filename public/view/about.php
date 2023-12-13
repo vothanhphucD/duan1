@@ -12,7 +12,7 @@
             <!-- about wrapper start -->
             <div class="about-us-wrapper pt-60 pb-40">
                 <div class="container">
-                    <div class="row">
+                    <div class="row">  
                         <!-- About Text Start -->
                         <div class="col-lg-6 order-last order-lg-first">
                             <div class="about-text-wrap">

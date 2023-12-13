@@ -10,7 +10,7 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Tất cả danh mục</h4>
+                    <h4 class="card-title">Tất cả danh mục</h4>  
                     <p></p>
                     <div class="table-responsive">
                         <table class="table table-striped" style=" text-align:center;">
