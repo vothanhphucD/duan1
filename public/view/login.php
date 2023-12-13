@@ -115,7 +115,13 @@
             });
         });
 
-        
+        $('#firstNameReg').change(function() {
+            if($('#firstNameReg').val() == '') {
+                $('#firstNameReg').css('border', '1px solid red');
+            } else {
+                $('#firstNameReg').css('border', '1px solid green');
+            }
+        });
         
         $('#lastNameReg').change(function() {
             if($('#lastNameReg').val() == '') {
