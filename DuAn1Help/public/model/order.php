@@ -39,6 +39,9 @@
             return $this->conn_execute($sql, $a);
         }
 
-        
+        public function updateInfo($address, $sdt) {
+            $sql = "UPDATE account SET account_address = ?, account_phone = ? WHERE account_id = ?";
+            return $this->conn_execute($sql, $address, $sdt, $_SESSION['x_user']['account_id']);
+        }
     }
 ?>
