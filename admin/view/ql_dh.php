@@ -125,3 +125,10 @@
     </footer>
 </div>
 
+<script>
+    $(".upOrderNow").on('click', function() {
+        var ID = $(this).closest('tr').find(".id_getDuoc").val();
+        $("#orderIDFormUpdate").val(ID);
+        $(".boxUpdateOrder").css('right', '50%');
+    });
+</script>
