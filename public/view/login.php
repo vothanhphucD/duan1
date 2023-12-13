@@ -80,3 +80,63 @@
     </div>
 </div>
 
+<script>
+    function checkErrorReg() {
+        $('#passAgain').keyup(function() {
+            var again = $('#passAgain').val();
+            var pass = $('#passReg').val();
+            if(again != pass) {
+                $('#passReg').css('border', '1px solid red');
+                $('#passAgain').css('border', '1px solid red');
+                $('.checkErrorReg').text('-Mật khẩu nhập lại không trùng khớp!');
+            } else {
+                $('#passReg').css('border', '1px solid green');
+                $('#passAgain').css('border', '1px solid green');
+                $('.checkErrorReg').text(' ');
+            }
+        });
+
+        $('#emailReg').change(function() {
+            $.ajax({
+                url: 'controllers/xuly_account.php',
+                method: 'POST',
+                data: {
+                    check: 'checkMailReg',
+                    value: $('#emailReg').val()
+                },
+                success: function(data) {
+                    $('.checkErrorReg').text(data);
+                    if(data == '') {
+                        $('#emailReg').css('border', '1px solid green');
+                    } else {
+                        $('#emailReg').css('border', '1px solid red');
+                    }
+                }
+            });
+        });
+
+        $('#firstNameReg').change(function() {
+            if($('#firstNameReg').val() == '') {
+                $('#firstNameReg').css('border', '1px solid red');
+            } else {
+                $('#firstNameReg').css('border', '1px solid green');
+            }
+        });
+        
+        $('#lastNameReg').change(function() {
+            if($('#lastNameReg').val() == '') {
+                $('#lastNameReg').css('border', '1px solid red');
+            } else {
+                $('#lastNameReg').css('border', '1px solid green');
+            }
+        });
+
+        $('#formReg').submit(function(event) {
+            if ($('#passReg').css('border-color') === 'rgb(255, 0, 0)' || $('#passAgain').css('border-color') === 'rgb(255, 0, 0)' || $('#emailReg').css('border-color') === 'rgb(255, 0, 0)' || $('#firstNameReg').val() === '' || $('#lastNameReg').val() === '') {
+                event.preventDefault();
+                return false;
+            }
+        });
+    }
+    checkErrorReg();
+</script>
