@@ -34,8 +34,11 @@
             return $this->conn_show_one($sql, $a);
         }
 
-       
+        public function update_feedBack($a) {
+            $sql = "UPDATE order_details SET details_feedback = 1 WHERE details_id = ?";
+            return $this->conn_execute($sql, $a);
+        }
 
-      
+        
     }
 ?>
