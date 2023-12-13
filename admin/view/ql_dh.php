@@ -58,26 +58,7 @@
                                                                 <button class="btn btn-danger btn-rounded btn-sm"> Duyệt </button>
                                                             </a>
                                                         ';
-                                                    } else if($order_status == 'Đã hủy') {
-                                                        echo '
-                                                            <br>
-                                                            <a class="mdi text-light">
-                                                                <button style="background-color: red;" class="btn btn-danger btn-rounded btn-sm"> Đã hủy </button>
-                                                            </a>
-                                                        ';
-                                                    } else if($order_status == 'Giao thành công') {
-                                                        echo '
-                                                            <br>
-                                                            <a class="mdi text-light">
-                                                                <button style="background-color: green;" class="btn btn-danger btn-rounded btn-sm"> Hoàn thành </button>
-                                                            </a>
-                                                        ';
-                                                    } else {
-                                                        echo '
-                                                        <a class="text-light upOrderNow">
-                                                            <button class="btn btn-warning btn-rounded btn-sm"> Cập nhật </button>
-                                                        </a>';
-                                                    }
+                                                    } else if($order_status == 'Đã hủy') 
                                                 echo '
                                             </td>
                                         </tr>
