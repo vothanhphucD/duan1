@@ -34,14 +34,8 @@
             return $this->conn_show_one($sql, $a);
         }
 
-        public function update_feedBack($a) {
-            $sql = "UPDATE order_details SET details_feedback = 1 WHERE details_id = ?";
-            return $this->conn_execute($sql, $a);
-        }
+       
 
-        public function updateInfo($address, $sdt) {
-            $sql = "UPDATE account SET account_address = ?, account_phone = ? WHERE account_id = ?";
-            return $this->conn_execute($sql, $address, $sdt, $_SESSION['x_user']['account_id']);
-        }
+      
     }
 ?>
