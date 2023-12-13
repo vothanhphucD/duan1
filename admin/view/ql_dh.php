@@ -58,7 +58,26 @@
                                                                 <button class="btn btn-danger btn-rounded btn-sm"> Duyệt </button>
                                                             </a>
                                                         ';
-                                                    } else if($order_status == 'Đã hủy') 
+                                                    } else if($order_status == 'Đã hủy') {
+                                                        echo '
+                                                            <br>
+                                                            <a class="mdi text-light">
+                                                                <button style="background-color: red;" class="btn btn-danger btn-rounded btn-sm"> Đã hủy </button>
+                                                            </a>
+                                                        ';
+                                                    } else if($order_status == 'Giao thành công') {
+                                                        echo '
+                                                            <br>
+                                                            <a class="mdi text-light">
+                                                                <button style="background-color: green;" class="btn btn-danger btn-rounded btn-sm"> Hoàn thành </button>
+                                                            </a>
+                                                        ';
+                                                    } else {
+                                                        echo '
+                                                        <a class="text-light upOrderNow">
+                                                            <button class="btn btn-warning btn-rounded btn-sm"> Cập nhật </button>
+                                                        </a>';
+                                                    }
                                                 echo '
                                             </td>
                                         </tr>
@@ -106,10 +125,3 @@
     </footer>
 </div>
 
-<script>
-    $(".upOrderNow").on('click', function() {
-        var ID = $(this).closest('tr').find(".id_getDuoc").val();
-        $("#orderIDFormUpdate").val(ID);
-        $(".boxUpdateOrder").css('right', '50%');
-    });
-</script>
