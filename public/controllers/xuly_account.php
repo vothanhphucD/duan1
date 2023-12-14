@@ -10,7 +10,14 @@
         $account = new acc_lass();
         $result = $account->logAcc($email, $pass);
         if($result > 0) {
-            
+            if(isset($remember_log)) {
+                $_SESSION['x_user'] = $result;
+                $_SESSION['x_user']['account_fullName'] = $result['account_lastName'] . ' ' . $result['account_firstName'];
+                $_SESSION['saveLog'] = true;
+            } else {
+                $_SESSION['x_user'] = $result;
+                $_SESSION['x_user']['account_fullName'] = $result['account_lastName'] . ' ' . $result['account_firstName'];
+            }
             echo '
                 <style>
                     .content {
