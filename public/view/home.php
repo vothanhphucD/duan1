@@ -161,7 +161,13 @@
                                                                             <input type="hidden" name="price" value="'. $tienProduct .'">
                                                                             <input type="hidden" name="qty" value="1">
                                                                             <input type="hidden" name="img" value="'. $image[0] .'">
-                                                                            <button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>
+                                                                            ';
+                                                                                if(isset($_SESSION['x_user'])) {
+                                                                                    echo '<button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>';
+                                                                                } else {
+                                                                                    echo '<button class="add-to-cart no-login" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>';
+                                                                                }
+                                                                            echo '
                                                                         </form>
                                                                     </li>
                                                                     <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
@@ -252,7 +258,13 @@
                                                                             <input type="hidden" name="price" value="'. $tienProduct .'">
                                                                             <input type="hidden" name="qty" value="1">
                                                                             <input type="hidden" name="img" value="'. $image[0] .'">
-                                                                            <button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>
+                                                                            ';
+                                                                                if(isset($_SESSION['x_user'])) {
+                                                                                    echo '<button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>';
+                                                                                } else {
+                                                                                    echo '<button class="add-to-cart no-login" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>';
+                                                                                }
+                                                                            echo '
                                                                         </form>
                                                                     </li>
                                                                     <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
@@ -342,7 +354,13 @@
                                                                             <input type="hidden" name="price" value="'. $tienProduct .'">
                                                                             <input type="hidden" name="qty" value="1">
                                                                             <input type="hidden" name="img" value="'. $image[0] .'">
-                                                                            <button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>
+                                                                            ';
+                                                                                if(isset($_SESSION['x_user'])) {
+                                                                                    echo '<button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>';
+                                                                                } else {
+                                                                                    echo '<button class="add-to-cart no-login" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>';
+                                                                                }
+                                                                            echo '
                                                                         </form>
                                                                     </li>
                                                                     <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
@@ -487,7 +505,14 @@
                                                                                 <input type="hidden" name="price" value="'. $tienProduct .'">
                                                                                 <input type="hidden" name="qty" value="1">
                                                                                 <input type="hidden" name="img" value="'. $image[0] .'">
-                                                                                <button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>
+                                                                                ';
+                                                                                    if(isset($_SESSION['x_user'])) {
+                                                                                        echo '
+                                                                                        <button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>                  ';                                                          } else {
+                                                                                        echo '
+                                                                                        <button class="add-to-cart no-login" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>   ';
+                                                                                    }                                                                           echo '
+
                                                                             </form>
                                                                         </li>
                                                                         <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
@@ -599,7 +624,13 @@
                                                                             <input type="hidden" name="price" value="'. $tienProduct .'">
                                                                             <input type="hidden" name="qty" value="1">
                                                                             <input type="hidden" name="img" value="'. $image[0] .'">
-                                                                            <button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>
+                                                                            ';
+                                                                                if(isset($_SESSION['x_user'])) {
+                                                                                    echo '<button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>';
+                                                                                } else {
+                                                                                    echo '<button class="add-to-cart no-login" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>';
+                                                                                }
+                                                                            echo '
                                                                         </form>
                                                                     </li>
                                                                     <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
@@ -703,7 +734,13 @@
                                                                             <input type="hidden" name="price" value="'. $tienProduct .'">
                                                                             <input type="hidden" name="qty" value="1">
                                                                             <input type="hidden" name="img" value="'. $image[0] .'">
-                                                                            <button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>
+                                                                            ';
+                                                                                if(isset($_SESSION['x_user'])) {
+                                                                                    echo '<button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>';
+                                                                                } else {
+                                                                                    echo '<button class="add-to-cart no-login" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>';
+                                                                                }
+                                                                            echo '
                                                                         </form>
                                                                     </li>
                                                                     <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
@@ -844,7 +881,14 @@
                                                                                         <input type="hidden" name="price" value="'. $tienProduct .'">
                                                                                         <input type="hidden" name="qty" value="1">
                                                                                         <input type="hidden" name="img" value="'. $image[0] .'">
-                                                                                        <button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>
+                                                                                        ';
+                                                                                            if(isset($_SESSION['x_user'])) {
+                                                                                                echo '<button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>';
+                                                                                            } else {
+                                                                                                echo '<button class="add-to-cart no-login" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>          ';
+                                                                                            }
+                                                                              echo '
+        
                                                                                     </form>
                                                                                 </li>
                                                                                 <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
@@ -936,7 +980,13 @@
                                                                             <input type="hidden" name="price" value="'. $tienProduct .'">
                                                                             <input type="hidden" name="qty" value="1">
                                                                             <input type="hidden" name="img" value="'. $image[0] .'">
-                                                                            <button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>
+                                                                            ';
+                                                                                if(isset($_SESSION['x_user'])) {
+                                                                                    echo '<button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>';
+                                                                                } else {
+                                                                                    echo '<button class="add-to-cart no-login" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>';
+                                                                                }
+                                                                            echo '
                                                                         </form>
                                                                     </li>
                                                                     <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
@@ -1028,7 +1078,13 @@
                                                                             <input type="hidden" name="price" value="'. $tienProduct .'">
                                                                             <input type="hidden" name="qty" value="1">
                                                                             <input type="hidden" name="img" value="'. $image[0] .'">
-                                                                            <button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>
+                                                                            ';
+                                                                                if(isset($_SESSION['x_user'])) {
+                                                                                    echo '<button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>';
+                                                                                } else {
+                                                                                    echo '<button class="add-to-cart no-login" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>';
+                                                                                }
+                                                                            echo '
                                                                         </form>
                                                                     </li>
                                                                     <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
@@ -1058,3 +1114,12 @@
           
             <!-- Li's Trendding Products Area End Here -->
             <!-- Begin Footer Area -->
+
+            <script>
+                $(".no-login").on('click', function(event) {
+                    event.preventDefault();
+                    if(confirm('Bạn vui lòng đăng nhập để thêm giỏ hàng!')) {
+                        window.location.href = "?op=login";
+                    }
+                });
+            </script>

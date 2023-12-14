@@ -1,7 +1,7 @@
 <?php
     class dao_con {
         function conn_db() {
-            $sqlServer = "mysql:host=localhost; dbname=hongnhanh";
+            $sqlServer = "mysql:host=localhost; dbname=duan1_help";
             $username = "root";
             $password = "";
     
@@ -14,7 +14,7 @@
             return $conn;
         }
     
-        //Them Sua Xoa san pham
+        //Them Sua Xoa
         function conn_execute($sql) {
             $conn = $this->conn_db();
             $sqlBindParam = array_slice(func_get_args(), 1);

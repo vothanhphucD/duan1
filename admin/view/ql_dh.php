@@ -37,7 +37,7 @@
                                             <td class="py-1">
                                                 ORDER-'. $order_id .'
                                             </td>
-                                            <td> $15</td>
+                                            <td> $'. $order_total .'</td>
                                             <td style="word-wrap: break-word;">
                                                 '. $order_pay .'
                                             </td>
