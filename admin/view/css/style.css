@@ -13373,7 +13373,10 @@ select.tt-hint {
     .nav-tabs.nav-tabs-vertical-custom .nav-link.active {
       color: #ffffff;
       border-color: rgba(255, 255, 255, 0.2); }
-
+b:hover{
+  cursor: pointer;
+  color: #0099FF;
+}
 .nav-pills {
   border-bottom: 1px solid #ebedf2;
   padding-bottom: 1rem; }
