@@ -136,10 +136,10 @@
                                 <p class="text-muted"> Bất đầu từ: Năm <?=convert($old_year['time_reg'])?> <a class="text-muted font-weight-medium pl-2" href="?act=ql_dh"><u>Chi tiết</u></a>
                                 </p>
                             </div>
-                            <div class="col-sm-5 text-md-right">
+                            <!-- <div class="col-sm-5 text-md-right">
                                 <button type="button" class="btn btn-icon-text mb-3 mb-sm-0 btn-inverse-primary font-weight-normal">
                                     <i class="mdi mdi-email btn-icon-prepend"></i>Download Report </button>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="row">
                             <div class="col-sm-4">
