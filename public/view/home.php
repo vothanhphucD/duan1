@@ -541,7 +541,7 @@
                     <div class="row">
                         <!-- Begin Li's Section Area -->
                         <div class="col-lg-12">
-                            <div class="li-section-title">
+                            <!-- <div class="li-section-title">
                                 <h2>
                                     <span>TV & Audio</span>
                                 </h2>
@@ -550,7 +550,7 @@
                                     <li><a href="">Sanai</a></li>
                                     <li><a href="">Meito</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
                             <div class="row">
                                 <div class="product-active owl-carousel">
                                     <?php
@@ -659,7 +659,7 @@
                         <div class="col-lg-12">
                             <div class="li-section-title">
                                 <h2>
-                                    <span>Điện Thoại</span>
+                                    <span>Điện Thoại & Phụ Kiện</span>
                                 </h2>
                             </div>
                             <div class="row">
