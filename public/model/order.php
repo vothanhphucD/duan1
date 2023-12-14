@@ -15,7 +15,7 @@
         }
 
         public function show_order() {
-            $sql = "SELECT * FROM orders WHERE account_id = ?";
+            $sql = "SELECT * FROM orders WHERE account_id = ? ORDER BY order_id DESC";
             return $this->conn_show_all($sql, $_SESSION['x_user']['account_id']);
         }
 

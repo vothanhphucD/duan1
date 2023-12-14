@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 30, 2023 lúc 05:46 PM
+-- Thời gian đã tạo: Th12 14, 2023 lúc 05:31 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -33,9 +33,6 @@ CREATE TABLE `account` (
   `account_lastName` varchar(50) NOT NULL,
   `account_sex` varchar(3) NOT NULL,
   `account_address` varchar(80) NOT NULL,
-  `account_number_pay` varchar(25) NOT NULL,
-  `account_pay` varchar(15) NOT NULL,
-  `account_avt` varchar(299) NOT NULL DEFAULT 'view/images/account/user.png',
   `account_email` varchar(40) NOT NULL,
   `account_phone` varchar(10) NOT NULL,
   `account_pass` varchar(100) NOT NULL,
@@ -49,8 +46,11 @@ CREATE TABLE `account` (
 -- Đang đổ dữ liệu cho bảng `account`
 --
 
-INSERT INTO `account` (`account_id`, `account_firstName`, `account_lastName`, `account_sex`, `account_address`, `account_number_pay`, `account_pay`, `account_avt`, `account_email`, `account_phone`, `account_pass`, `account_position`, `account_notify`, `account_status`, `time_reg`) VALUES
-(1, 'Ý', 'Nguyễn Tấn', 'Nam', '56a Cống Lỡ, Phường 15, Quận Tân Bình, TP Hồ Chí Minh', '1234999977774444', 'MBBank', 'view/images/account/Ý 30k$.jpg', 'nguyentany.tricker@gmail.com', '0345123856', '000', 'Quản trị viên', '', 'Online', '2023-11-05 10:00:11');
+INSERT INTO `account` (`account_id`, `account_firstName`, `account_lastName`, `account_sex`, `account_address`, `account_email`, `account_phone`, `account_pass`, `account_position`, `account_notify`, `account_status`, `time_reg`) VALUES
+(1, 'Ý', 'Nguyễn Tấn', 'Nam', '56a Cống Lỡ, Phường 15, Quận Tân Bình, TP Hồ Chí Minh', 'nguyentany.tricker@gmail.com', '0345123856', '000', 'Quản trị viên', '', 'Offline', '2023-11-05 10:00:11'),
+(13, 'Test', 'TRần thị', '', '', 'tranthitest@gmail.com', '', '123', 'Khách hàng', '', 'Offline', '2023-12-01 02:47:06'),
+(14, 'Test', 'Er', '', '123', 'tester01@test.com', '123', '123', 'Khách hàng', '', 'Offline', '2023-12-05 10:50:37'),
+(15, 'Taans', 'Tesst', '', '148/3 Hùng vương easup đắk lắk', 'tanytest@gmail.com', '0388322426', '123', 'Khách hàng', '', 'Online', '2023-12-12 17:18:41');
 
 -- --------------------------------------------------------
 
@@ -75,7 +75,8 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`cart_id`, `cart_name`, `cart_price`, `cart_img`, `cart_qty`, `product_id`, `account_id`, `shop_id`, `time_reg`) VALUES
-(233, 'Chuột Có dây Gaming Asus TUF M3 ', 19.00, 'view/images/product/chuot-gaming-asus-tuf-m3-den-2-org.jpg', 1, 24, 1, 0, '2023-11-30 16:41:14');
+(236, 'Điện thoại realme 10 ', 30.00, 'view/images/product/realme-10-vang-1.jpg', 5, 31, 1, 0, '2023-12-01 02:41:47'),
+(237, 'Điện thoại realme C51 64GB', 15.00, 'view/images/product/realme-c51-xanh-1-1.jpg', 1, 28, 1, 0, '2023-12-01 02:41:53');
 
 -- --------------------------------------------------------
 
@@ -86,8 +87,7 @@ INSERT INTO `cart` (`cart_id`, `cart_name`, `cart_price`, `cart_img`, `cart_qty`
 CREATE TABLE `category` (
   `category_id` int(123) NOT NULL,
   `category_name` varchar(20) NOT NULL,
-  `category_img` varchar(100) NOT NULL DEFAULT 'https://upload.wikimedia.org/wikipedia/commons/3/30/%28none%29.png',
-  `category_status` varchar(20) NOT NULL,
+  `category_status` varchar(20) NOT NULL DEFAULT 'Không hoạt động',
   `time_reg` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -95,10 +95,10 @@ CREATE TABLE `category` (
 -- Đang đổ dữ liệu cho bảng `category`
 --
 
-INSERT INTO `category` (`category_id`, `category_name`, `category_img`, `category_status`, `time_reg`) VALUES
-(1, 'Laptop', 'view/images/rau.jpg', 'Đang hoạt động', '2023-11-05 09:39:37'),
-(2, 'TV', 'view/images/cu.jpg', 'Đang hoạt động', '2023-11-05 09:39:37'),
-(3, 'Radio', 'view/images/qua.jpg', 'Đang hoạt động', '2023-11-05 09:40:55');
+INSERT INTO `category` (`category_id`, `category_name`, `category_status`, `time_reg`) VALUES
+(1, 'Laptop', 'Đang hoạt động', '2023-11-05 09:39:37'),
+(2, 'TV', 'Đang hoạt động', '2023-11-05 09:39:37'),
+(3, 'Radio', 'Đang hoạt động', '2023-11-05 09:40:55');
 
 -- --------------------------------------------------------
 
@@ -120,7 +120,7 @@ CREATE TABLE `discount_code` (
 --
 
 INSERT INTO `discount_code` (`code_id`, `code_gift`, `code_reduced`, `code_qty`, `code_status`, `reg_time`) VALUES
-(1, 'TanYVoucher', 30, 14, 'On', '2023-11-08 11:24:46');
+(1, 'TanYVoucher', 30, 12, 'On', '2023-11-08 11:24:46');
 
 -- --------------------------------------------------------
 
@@ -195,10 +195,6 @@ INSERT INTO `image_product` (`image_id`, `image_file`, `product_id`) VALUES
 (221, 'view/images/product/acer-aspire-5-a515-58gm-51lb-i5-nxkq4sv002-glr-2.jpg', 22),
 (222, 'view/images/product/acer-aspire-5-a515-58gm-51lb-i5-nxkq4sv002-glr-3.jpg', 22),
 (223, 'view/images/product/acer-aspire-5-a515-58gm-51lb-i5-nxkq4sv002-glr-4.jpg', 22),
-(224, 'view/images/product/chuot-gaming-asus-tuf-m3-den-2-org.jpg', 24),
-(225, 'view/images/product/chuot-gaming-asus-tuf-m3-den-3-org.jpg', 24),
-(226, 'view/images/product/chuot-gaming-asus-tuf-m3-den-4-org.jpg', 24),
-(227, 'view/images/product/chuot-gaming-asus-tuf-m3-den-5-org.jpg', 24),
 (228, 'view/images/product/msi-gaming-gf63-thin-12ve-i5-460vn-glr-1.jpg', 25),
 (229, 'view/images/product/msi-gaming-gf63-thin-12ve-i5-460vn-glr-2.jpg', 25),
 (230, 'view/images/product/msi-gaming-gf63-thin-12ve-i5-460vn-glr-3.jpg', 25),
@@ -219,10 +215,6 @@ INSERT INTO `image_product` (`image_id`, `image_file`, `product_id`) VALUES
 (245, 'view/images/product/iphone-12-pro-xam-2-org.jpg', 29),
 (246, 'view/images/product/iphone-12-pro-xam-3-org.jpg', 29),
 (247, 'view/images/product/iphone-12-pro-xam-4-org.jpg', 29),
-(248, 'view/images/product/realme-11-vang-1-1.jpg', 30),
-(249, 'view/images/product/realme-11-vang-2-1.jpg', 30),
-(250, 'view/images/product/realme-11-vang-3-1.jpg', 30),
-(251, 'view/images/product/realme-11-vang-4-1.jpg', 30),
 (252, 'view/images/product/realme-10-vang-1.jpg', 31),
 (253, 'view/images/product/realme-10-vang-2.jpg', 31),
 (254, 'view/images/product/realme-10-vang-3.jpg', 31),
@@ -269,7 +261,7 @@ CREATE TABLE `orders` (
   `order_total` double(10,2) NOT NULL,
   `order_pay` varchar(15) NOT NULL,
   `order_note` varchar(299) NOT NULL DEFAULT 'Không có ghi chú',
-  `order_status` varchar(30) NOT NULL DEFAULT 'Đang xử lý',
+  `order_status` varchar(30) NOT NULL DEFAULT 'Đang chờ duyệt',
   `account_id` int(123) NOT NULL,
   `time_reg` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -279,8 +271,17 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `order_total`, `order_pay`, `order_note`, `order_status`, `account_id`, `time_reg`) VALUES
-(128, 64.00, 'Tiền mặt', 'Nhớ đùm bọc', 'Đang xử lý', 1, '2023-11-30'),
-(129, 18.20, 'Tiền mặt', 'qweqwqdasdsa', 'Đang xử lý', 1, '2023-11-30');
+(128, 64.00, 'Tiền mặt', 'Nhớ đùm bọc', 'Giao thành công', 1, '2023-12-14'),
+(129, 18.20, 'Tiền mặt', 'qweqwqdasdsa', 'Giao thành công', 1, '2023-11-30'),
+(130, 78.00, 'Tiền mặt', '78', 'Đang giao hàng', 1, '2023-12-01'),
+(131, 18.20, 'Tiền mặt', 'Nhớ bỏ dưa chua', 'Đang giao hàng', 13, '2023-12-01'),
+(132, 60.90, 'Tiền mặt', '60.9', 'Đang chờ duyệt', 14, '2023-12-05'),
+(133, 60.00, 'Tiền mặt', '60', 'Đã duyệt', 14, '2023-12-05'),
+(134, 45.00, 'Tiền mặt', '45', 'Đang chờ duyệt', 14, '2023-12-05'),
+(135, 19.00, 'Tiền mặt', '19', 'Đang chờ duyệt', 14, '2023-12-05'),
+(136, 15.00, 'Chuyển khoản', 'sda', 'Đã hủy', 14, '2023-12-05'),
+(137, 19.00, 'Tiền mặt', '19', 'Giao thành công', 15, '2023-12-13'),
+(138, 21.00, 'Chuyển khoản', '21', 'Đang chờ duyệt', 15, '2023-12-13');
 
 -- --------------------------------------------------------
 
@@ -304,8 +305,14 @@ CREATE TABLE `order_details` (
 --
 
 INSERT INTO `order_details` (`details_id`, `details_name`, `details_price`, `details_img`, `details_qty`, `details_feedback`, `product_id`, `order_id`) VALUES
-(153, 'Pin sạc dự phòng Polymer 10000mAh Không dây ', 16.00, 'view/images/product/sac-du-phong-polymer-10000mah-type-c-p66d-xam-3-org.jpg', 4, 0, 13, 128),
-(154, 'Điện thoại realme 11 256GB', 26.00, 'view/images/product/realme-11-vang-1-1.jpg', 1, 0, 30, 129);
+(153, 'Pin sạc dự phòng Polymer 10000mAh Không dây ', 16.00, 'view/images/product/sac-du-phong-polymer-10000mah-type-c-p66d-xam-3-org.jpg', 4, 1, 13, 128),
+(156, 'Laptop MSI Gaming GF63 Thin 12VE i5 ', 21.00, 'view/images/product/msi-gaming-gf63-thin-12ve-i5-460vn-glr-1.jpg', 1, 0, 25, 130),
+(157, 'Tai nghe Bluetooth AirPods 3 Lightning Charge Apple', 19.00, 'view/images/product/tai-nghe-bluetooth-airpods-3-lightning-charge-apple-mpny3-trang-1.jpg', 1, 0, 26, 130),
+(161, 'Laptop MSI Gaming GF63 Thin 12VE i5 ', 21.00, 'view/images/product/msi-gaming-gf63-thin-12ve-i5-460vn-glr-1.jpg', 2, 0, 25, 132),
+(162, 'Bộ 2 móc điện thoại nhựa dẻo OSMIA CK-CRS1', 15.00, 'view/images/product/bo-2-moc-dien-thoai-deo-osmia-ck-crs1-meo-hoa-den-1-org.jpg', 4, 0, 15, 133),
+(166, 'Miếng dán kính cường lực chống ánh sáng xanh', 15.00, 'view/images/product/mieng-dan-kinh-cuong-luc-chong-anh-sang-xanh-iphone-15-jcpal-1.jpg', 1, 0, 14, 136),
+(167, 'Tai nghe Bluetooth AirPods 3 Lightning Charge Apple', 19.00, 'view/images/product/tai-nghe-bluetooth-airpods-3-lightning-charge-apple-mpny3-trang-1.jpg', 1, 1, 26, 137),
+(168, 'Laptop MSI Gaming GF63 Thin 12VE i5 ', 21.00, 'view/images/product/msi-gaming-gf63-thin-12ve-i5-460vn-glr-1.jpg', 1, 0, 25, 138);
 
 -- --------------------------------------------------------
 
@@ -345,14 +352,13 @@ INSERT INTO `product` (`product_id`, `product_name`, `product_price`, `product_d
 (20, 'Bàn Phím Cơ Có Dây Gaming Razer BlackWidow V3', 28.00, 0.00, 200, 10, 0, 0x4e68e1baad70206dc3b42074e1baa3206e67e1baaf6e2076c3b420c491c3a279206e686120f09f9898, 2, '2023-11-05'),
 (21, 'Laptop Asus TUF Gaming F15 FX506HE i7', 24.00, 0.00, 100, 13, 0, 0x4e68e1baad70206dc3b42074e1baa3206e67e1baaf6e2076c3b420c491c3a279206e686120f09f9898, 2, '2023-11-05'),
 (22, 'Laptop Acer Aspire 5 Gaming A515 58GM 51LB i5', 37.00, 0.00, 200, 10, 0, 0x4e68e1baad70206dc3b42074e1baa3206e67e1baaf6e2076c3b420c491c3a279206e686120f09f9898, 2, '2023-11-05'),
-(24, 'Chuột Có dây Gaming Asus TUF M3 ', 19.00, 0.00, 200, 10, 0, 0x4e68e1baad70206dc3b42074e1baa3206e67e1baaf6e2076c3b420c491c3a279206e686120f09f9898, 1, '2023-11-05'),
 (25, 'Laptop MSI Gaming GF63 Thin 12VE i5 ', 21.00, 0.00, 55, 111, 0, 0x4e68e1baad70206dc3b42074e1baa3206e67e1baaf6e2076c3b420c491c3a279206e686120f09f9898, 1, '2023-11-05'),
 (26, 'Tai nghe Bluetooth AirPods 3 Lightning Charge Apple', 19.00, 0.00, 191, 30, 0, 0x4e68e1baad70206dc3b42074e1baa3206e67e1baaf6e2076c3b420c491c3a279206e686120f09f9898, 1, '2023-11-05'),
 (27, 'realme C53 (8GB/256GB', 30.00, 0.00, 200, 10, 0, 0x4e68e1baad70206dc3b42074e1baa3206e67e1baaf6e2076c3b420c491c3a279206e686120f09f9898, 1, '2023-11-05'),
 (28, 'Điện thoại realme C51 64GB', 15.00, 0.00, 200, 12, 0, 0x4e68e1baad70206dc3b42074e1baa3206e67e1baaf6e2076c3b420c491c3a279206e686120f09f9898, 1, '2023-11-05'),
 (29, 'Iphone 12Pro', 21.00, 0.00, 171, 190, 0, 0x4e68e1baad70206dc3b42074e1baa3206e67e1baaf6e2076c3b420c491c3a279206e686120f09f9898, 1, '2023-11-05'),
-(30, 'Điện thoại realme 11 256GB', 26.00, 0.00, 199, 12, 0, 0x4e68e1baad70206dc3b42074e1baa3206e67e1baaf6e2076c3b420c491c3a279206e686120f09f9898, 1, '2023-11-06'),
-(31, 'Điện thoại realme 10 ', 30.00, 0.00, 181, 99, 0, 0x4e68e1baad70206dc3b42074e1baa3206e67e1baaf6e2076c3b420c491c3a279206e686120f09f9898, 1, '2023-11-05');
+(31, 'Điện thoại realme 10 ', 30.00, 0.00, 181, 99, 0, 0x4e68e1baad70206dc3b42074e1baa3206e67e1baaf6e2076c3b420c491c3a279206e686120f09f9898, 1, '2023-11-05'),
+(40, 'Test add', 120.00, 0.00, 10, 0, 0, 0x53e1baa36e207068e1baa96d2062c3a16e206368e1baa179206e68e1baa57420f09f9898f09f9898f09f9898f09f94b1f09f94b1f09f94b1f09f94b1, 2, '2023-12-06');
 
 -- --------------------------------------------------------
 
@@ -368,6 +374,14 @@ CREATE TABLE `rate` (
   `account_id` int(123) NOT NULL,
   `time_reg` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `rate`
+--
+
+INSERT INTO `rate` (`rate_id`, `rate_comment`, `rate_star`, `product_id`, `account_id`, `time_reg`) VALUES
+(17, 'Ổn đó', 4, 13, 1, '2023-12-01 01:57:58'),
+(18, 'Oke ổn áp', 4, 26, 15, '2023-12-12 17:24:44');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -450,19 +464,19 @@ ALTER TABLE `rate`
 -- AUTO_INCREMENT cho bảng `account`
 --
 ALTER TABLE `account`
-  MODIFY `account_id` int(123) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `account_id` int(123) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(123) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
+  MODIFY `cart_id` int(123) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
 
 --
 -- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(123) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `category_id` int(123) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `discount_code`
@@ -474,7 +488,7 @@ ALTER TABLE `discount_code`
 -- AUTO_INCREMENT cho bảng `image_product`
 --
 ALTER TABLE `image_product`
-  MODIFY `image_id` int(123) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=256;
+  MODIFY `image_id` int(123) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=258;
 
 --
 -- AUTO_INCREMENT cho bảng `new`
@@ -486,25 +500,25 @@ ALTER TABLE `new`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(123) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
+  MODIFY `order_id` int(123) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
 
 --
 -- AUTO_INCREMENT cho bảng `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `details_id` int(123) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=155;
+  MODIFY `details_id` int(123) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
 
 --
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(123) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `product_id` int(123) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT cho bảng `rate`
 --
 ALTER TABLE `rate`
-  MODIFY `rate_id` int(123) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `rate_id` int(123) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

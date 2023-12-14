@@ -242,7 +242,7 @@
                                             </thead>
                                             <tbody>
             ';
-            foreach($results as $items) {
+            foreach($results as $items) {   
                 extract($items);
                 $show .= '
                                                 <tr>
@@ -257,7 +257,7 @@
                                                         } else {
                                                             $show .= '<td class="li-product-add-cart"><a style="cursor: pointer; color: green;">Da danh gia!</a></td>';
                                                         }
-                                                    } else if($status == 'Đang xử lý') {
+                                                    } else if($status == 'Đang chờ duyệt') {
                                                         $show .= '<td><a style="font-size: 18px; color: red;" href="controllers/xuly_order.php?id='. $id .'&check=cancelOrder">Huy don</a></td>';
                                                     } else if($status == 'Đã hủy') {
                                                         $show .= '<td><a style="font-size: 18px; color: red;">Da Huy</a></td>';
