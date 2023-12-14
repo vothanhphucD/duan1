@@ -106,7 +106,7 @@
                                     </div>
                                     <i class="card-icon-indicator mdi mdi-cube-outline bg-inverse-icon-danger"></i>
                                 </div>
-                                <h6 class="text-white"><a href="?act=ql_sanpham">CHI TIẾT</a></h6>
+                                <h6 class="text-white"><a href="?act=ql_sp">CHI TIẾT</a></h6>
                             </div>
                         </div>
                     </div>
