@@ -1,5 +1,6 @@
 
 <?php
+ date_default_timezone_set('Asia/Ho_Chi_Minh');
     function countAcc($value) {
         $i = 0;
         foreach($value as $items) {
