@@ -93,7 +93,13 @@
                                     <input type="hidden" name="price" value="<?=$tien?>">
                                     <input type="hidden" name="img" value="<?=$image[0]?>">
                                 </div>
-                                <button class="add-to-cart" name="addToCartDetail" type="submit">Add to cart</button>
+                                <?php
+                                    if(isset($_SESSION['x_user'])) {
+                                        echo '<button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>';
+                                    } else {
+                                        echo '<button class="add-to-cart no-login" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>';
+                                    }
+                                ?>
                             </form>
                         </div>
                         <div class="product-additional-info pt-25">
@@ -559,3 +565,13 @@
         </div>
     </div>
 </section>
+
+
+            <script>
+                $(".no-login").on('click', function(event) {
+                    event.preventDefault();
+                    if(confirm('Bạn vui lòng đăng nhập để thêm giỏ hàng!')) {
+                        window.location.href = "?op=login";
+                    }
+                });
+            </script>

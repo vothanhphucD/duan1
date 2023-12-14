@@ -156,7 +156,13 @@ $show_next = "?op=shop&page=$next&start=$startNext";
                                                                                             <input type="hidden" name="price" value="'. $tienProduct .'">
                                                                                             <input type="hidden" name="qty" value="1">
                                                                                             <input type="hidden" name="img" value="'. $image[0] .'">
-                                                                                            <button class="add-to-cart" name="addToCartDetail" type="submit">Add to cart</button>
+                                                                                            ';
+                                                                                            if(isset($_SESSION['x_user'])) {
+                                                                                                echo '<button class="add-to-cart" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>';
+                                                                                            } else {
+                                                                                                echo '<button class="add-to-cart no-login" name="addToCartDetail" type="submit">Thêm Vào Giỏ</button>';
+                                                                                            }
+                                                                                        echo '
                                                                                         </form>
                                                                                     </li>
                                                                                     <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
@@ -717,21 +723,21 @@ $show_next = "?op=shop&page=$next&start=$startNext";
                                         <li><a href="<?= $show_back ?>" class="Previous"><i class="fa fa-chevron-left"></i> Previous</a>
                                         </li>
                                         <?php
-                                        $show_offset = "";
-                                        $start = $start - 1;
-                                        $start_default = $start;
-                                        $j = 0;
-                                        $o = 0;
-                                        for ($i = 1; $i <= $offset; $i++) {
-                                            if ($i == $page) {
-                                                $show_offset .= '<li class="active"><a href="?op=shop&page=' . $i . '&start=' . $offset . '">' . $i . '</a></li>';
-                                            } else {
-                                                $show_offset .= '<li><a href="?op=shop&page=' . $i . '&start=' . $o . '">' . $i . '</a></li>';
+                                            $show_offset = "";
+                                            $start = $start - 1;
+                                            $start_default = $start;
+                                            $j = 0;
+                                            $o = 0;
+                                            for ($i = 1; $i <= $offset; $i++) {
+                                                if ($i == $page) {
+                                                    $show_offset .= '<li class="active"><a href="?op=shop&page=' . $i . '&start=' . $offset . '">' . $i . '</a></li>';
+                                                } else {
+                                                    $show_offset .= '<li><a href="?op=shop&page=' . $i . '&start=' . $o . '">' . $i . '</a></li>';
+                                                }
+                                                $j++;
+                                                $o = $j * 12;
                                             }
-                                            $j++;
-                                            $o = $j * 12;
-                                        }
-                                        echo $show_offset;
+                                            echo $show_offset;
                                         ?>
                                         <li>
                                             <a href="<?= $show_next ?>" class="Next"> Next <i class="fa fa-chevron-right"></i></a>
@@ -822,3 +828,12 @@ $show_next = "?op=shop&page=$next&start=$startNext";
         }); 
     });
 </script>
+
+            <script>
+                $(".no-login").on('click', function(event) {
+                    event.preventDefault();
+                    if(confirm('Bạn vui lòng đăng nhập để thêm giỏ hàng!')) {
+                        window.location.href = "?op=login";
+                    }
+                });
+            </script>

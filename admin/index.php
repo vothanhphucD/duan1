@@ -39,10 +39,22 @@ if (isset($_GET['act'])) {
             include("view/ql_dh.php");
             break;
         default:
+            include 'model/home.php';
+            $static = new staticHome();
+            $count_acc = $static->show_account();
+            $count_order = $static->show_order();
+            $old_year = $static->old_year();
+            $count_pro = $static->count_product();
             include("View/trangchu.php");
             break;
     }
 } else {
+    include 'model/home.php';
+    $static = new staticHome();
+    $count_acc = $static->show_account();
+    $count_order = $static->show_order();
+    $old_year = $static->old_year();
+    $count_pro = $static->count_product();
     include("View/trangchu.php");
 }
 include("view/footer.php");
