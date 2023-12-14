@@ -242,7 +242,7 @@
                                     <ul>
                                         <li class="dropdown-holder"><a href="index.php">Trang Chủ</a>
                                         </li>
-                                        <li class="megamenu-holder"><a href="?op=shop&page=1&start=0">Danh Mục</a>
+                                        <li class="megamenu-holder"><a href="?op=shop&page=1&start=0">Sản phẩm</a>
                                         </li>
                                         <li class="dropdown-holder"><a href="?op=blog">Tin Tức</a>
                                         </li>
