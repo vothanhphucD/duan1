@@ -776,22 +776,7 @@ $show_next = "?op=shop&page=$next&start=$startNext";
                                     <li><a href="#">Wireless Speakers</a></li>
                                 </ul>
                             </li>
-                            <li class="has-sub"><a href="#">Electronics</a>
-                                <ul>
-                                    <li><a href="#">Amazon Home</a></li>
-                                    <li><a href="#">Kitchen & Dining</a></li>
-                                    <li><a href="#">Bed & Bath</a></li>
-                                    <li><a href="#">Appliances</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-sub"><a href="#">Electronics</a>
-                                <ul>
-                                    <li><a href="#">Amazon Home</a></li>
-                                    <li><a href="#">Kitchen & Dining</a></li>
-                                    <li><a href="#">Bed & Bath</a></li>
-                                    <li><a href="#">Appliances</a></li>
-                                </ul>
-                            </li>
+                            
                         </ul>
                     </div>
                     <!-- category-sub-menu end -->
@@ -804,3 +789,21 @@ $show_next = "?op=shop&page=$next&start=$startNext";
     </div>
 </div>
 <input type="hidden" id="start_offset" value="<?=$start_default?>">
+<script>
+    $("#select_fill").change(function() {
+        var value = $(this).val();
+        var start = $("#start_offset").val();
+        $.ajax({
+            url: 'controllers/xuly_product.php',
+            method: "POST",
+            data: {
+                check: 'fillShop',
+                value: value,
+                start: start
+            },
+            success: function(data) {
+                $(".shop-product-area").html(data);
+            }
+        }); 
+    });
+</script>
