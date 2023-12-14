@@ -16,7 +16,51 @@
         return $i;
     }
 
-    
+    function doanhThuAll($value) {
+        $tong = 0;
+        foreach($value as $items) {
+            extract($items);
+            if($order_status == 'Giao thành công') {
+                $tong += $order_total;
+            }
+        }
+        return $tong;
+    }
+
+    function doanhthuMonth($value) {
+        $tong = 0;
+        $dateNow = date('Y-m');
+        foreach($value as $items) {
+            extract($items);
+            $dateOld = date('Y-m', strtotime($time_reg));
+            if($order_status == 'Giao thành công') {
+                if($dateNow == $dateOld) {
+                    $tong += $order_total;
+                }
+            }
+        }
+        return $tong;
+    }
+
+    function doanhthuToday($value) {
+        $tong = 0;
+        $dateNow = date('Y-m-d');
+        foreach($value as $items) {
+            extract($items);
+            $dateOld = date('Y-m-d', strtotime($time_reg));
+            if($order_status == 'Giao thành công') {
+                if($dateNow == $dateOld) {
+                    $tong += $order_total;
+                }
+            }
+        }
+        return $tong;
+    }
+
+    function convert($value) {
+        $value = date('Y', strtotime($value));
+        return $value;
+    }
 ?>
             <div class="main-panel">
     <div class="content-wrapper pb-0">
