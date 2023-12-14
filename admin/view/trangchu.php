@@ -195,7 +195,7 @@
                             <div class="col-sm-8">
                             <p class="text-muted mb-0"> Chào mừng đến với trang admin của cửa hàng của tôi! Tại đây, chúng tôi tập trung vào việc cung cấp những sản phẩm công nghệ hàng đầu như điện thoại di động và laptop. Mục tiêu của chúng tôi không chỉ là kinh doanh, mà còn là tạo ra một trải nghiệm mua sắm độc đáo và chất lượng dịch vụ tốt nhất. Sự đa dạng của bộ sưu tập sản phẩm và sự tận tâm trong dịch vụ là những điểm mà chúng tôi luôn tự hào. Cùng với đội ngũ nhiệt huyết, chúng tôi cam kết mang đến cho bạn những sản phẩm chất lượng và một trải nghiệm mua sắm tuyệt vời.
                             Hãy tiếp tục đồng hành cùng chúng tôi trên hành trình khám phá thế giới công nghệ đầy tiềm năng này!
-                            Nếu có điều gì cần điều chỉnh hoặc bổ sung, xin hãy cho tôi biết nhé! <b>Tìm hiểu thêm</b>
+                            Nếu có điều gì cần điều chỉnh hoặc bổ sung, xin hãy cho tôi biết nhé! <b><a href="https://www.facebook.com/hongnhanh17777777/">Tìm hiểu thêm</a></b>
                                  </p>
                             </div>
                         </div>
