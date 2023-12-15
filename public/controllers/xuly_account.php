@@ -404,6 +404,17 @@
             ';
         }
     }
+    if(isset($check)) {    //Xử lý dữ kiện của Ajax
+        include '../model/account.php';
+        $account = new acc_lass();
 
-    
+        if($check == 'checkMailReg') { // Kiểm tra xem mail trước khi đăng ký đã tồn tại chưa!
+            $result = $account->checkMail($value);
+            if($result > 0) {
+                echo '-E-mail đã tồn tại!';
+            } else {
+                echo '';
+            }
+        }
+    }
 ?>
