@@ -20,7 +20,15 @@
             return $this->conn_show_one($sql, $email);
         }
 
-        
+        public function updateStatus($check) {
+            if($check == 0) {
+                $sql = "UPDATE account SET account_status = 'Offline' WHERE account_id = ?";
+                return $this->conn_execute($sql, $_SESSION['x_user']['account_id']);
+            } else {
+                $sql = "UPDATE account SET account_status = 'Online' WHERE account_id = ?";
+                return $this->conn_execute($sql, $_SESSION['x_user']['account_id']);
+            }
+        }
 
     }
 ?>

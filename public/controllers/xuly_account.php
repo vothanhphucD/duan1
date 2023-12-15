@@ -404,6 +404,7 @@
             ';
         }
     }
+
     if(isset($check)) {    //Xử lý dữ kiện của Ajax
         include '../model/account.php';
         $account = new acc_lass();
